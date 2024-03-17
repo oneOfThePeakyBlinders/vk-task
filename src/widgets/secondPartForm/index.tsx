@@ -7,6 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useDebounce } from "use-debounce";
 import React from "react";
+import {Group, Panel, PanelHeader, View} from "@vkontakte/vkui";
 
 export const SecondPartForm = () => {
     const shema = yup.object().shape({
@@ -43,12 +44,17 @@ export const SecondPartForm = () => {
         enabled: false,
     });
 
-    //const onSubmit = async (formData: UserType) => {};
 
     return (
-        <form className={styles.form}>
-            <input className={styles.textfield} {...register("name")} />
-            {data?.age && <p>{data.age}</p>}
-        </form>
+        <View activePanel="get-fact">
+            <Panel id='get-fact'>
+                <Group style={{display: 'flex', justifyContent: 'center'}}>
+                    <form className={styles.form}>
+                        <input className={styles.textfield} {...register("name")} />
+                        {data?.age && <p>{data.age}</p>}
+                    </form>
+                </Group>
+            </Panel>
+        </View>
     );
 };

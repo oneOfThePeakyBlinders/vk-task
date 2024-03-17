@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { MutableRefObject, useRef } from "react";
+import {Group, Panel, PanelHeader, View} from "@vkontakte/vkui";
 
 export const FirstPartBlock = () => {
     const inputRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
@@ -41,21 +42,26 @@ export const FirstPartBlock = () => {
     };
 
     return (
-        <div   className={styles.block}>
-            <input
-                ref={inputRef}
-                className={styles.textfield}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-            />
-
-            <button
-                className={styles.btn}
-                onClick={onClick}
-                disabled={isFetched}
-            >
-                Получить
-            </button>
-        </div>
+        <View activePanel="get-fact">
+            <Panel id='get-fact'>
+                <Group style={{display: 'flex', justifyContent: 'center'}}>
+                    <div className={styles.block}>
+                        <input
+                            ref={inputRef}
+                            className={styles.textfield}
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
+                        <button
+                            className={styles.btn}
+                            onClick={onClick}
+                            disabled={isFetched}
+                        >
+                            Получить
+                        </button>
+                    </div>
+                </Group>
+            </Panel>
+        </View>
     );
 };

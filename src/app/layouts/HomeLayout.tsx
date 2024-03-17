@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    AppRoot,
+    AppRoot, Card,
     Group,
     Header,
     Panel,
@@ -27,13 +27,14 @@ const HomeLayout = () => {
                     <View activePanel="main">
                         <Panel id="main">
                             <PanelHeader before={<Icon32LogoVkColor/>}>VK-TEST</PanelHeader>
-                            <Group header={<Header mode="secondary">Form</Header>}>
-                               {/*<Outlet/>*/}
-                                <BrowserRouter>
-                                        <Link to={homeRoutes.first.path}><Title>1 часть</Title></Link>
-                                        <Link to={homeRoutes.second.path}><Title>2 часть</Title></Link>
-                                    <AppRouter />
-                                </BrowserRouter>
+                            <Group header={<Header mode="secondary">Выберите раздел:</Header>}>
+                                <Card>
+                                    <BrowserRouter>
+                                        <Title><Link style={{textDecoration: 'none'}} to={homeRoutes.first.path}>1-ый раздел</Link></Title>
+                                        <Title><Link style={{textDecoration: 'none'}} to={homeRoutes.second.path}>2-ый раздел</Link></Title>
+                                        <AppRouter />
+                                    </BrowserRouter>
+                                </Card>
                             </Group>
                         </Panel>
                     </View>
