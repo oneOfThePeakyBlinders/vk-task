@@ -1,0 +1,37 @@
+.form {
+    width: 100%;
+    max-width: 400px;
+    padding: 36px;
+    box-shadow: 0px 0px 4px 2px #e9e4e4;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+.textfield {
+    width: 100%;
+    height: 35px;
+    padding: 0 16px;
+    box-shadow: 0px 0px 4px 2px #e9e4e4;
+    border-radius: 6px;
+}
+.btn {
+    width: 100%;
+    max-width: 80%;
+    height: 35px;
+    border-radius: 6px;
+    border: 0;
+    background: rgb(68, 128, 249);
+    cursor: pointer;
+    color: #fff;
+    transition: 0.2s;
+}
+.btn:hover {
+    background: rgb(55, 119, 247);
+    transform: scale(0.98);
+}
+.btn:active {
+    background: rgb(27, 99, 245);
+    transform: scale(0.95);
+}
