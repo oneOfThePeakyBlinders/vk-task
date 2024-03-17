@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { homeRoutes } from "../../shared";
 import React from "react";
-import HomeLayout from "../layouts/HomeLayout";
+//import HomeLayout from "../layouts/HomeLayout";
 
 export const AppRouter = () => {
     return (
@@ -11,7 +11,7 @@ export const AppRouter = () => {
                 {/* {Object.values(homeRoutes).map((route) => (
                     <Route path={route.path} element={route.element} />
                 ))} */}
-                <Route path='/' element={<HomeLayout/>}>
+                {/*<Route path='/' element={<HomeLayout/>}>*/}
                     <Route
                         path={homeRoutes.first.path}
                         element={homeRoutes.first.element}
@@ -20,7 +20,7 @@ export const AppRouter = () => {
                         path={homeRoutes.second.path}
                         element={homeRoutes.second.element}
                     />
-                </Route>
+                {/*</Route>*/}
             </Routes>
         </>
     );

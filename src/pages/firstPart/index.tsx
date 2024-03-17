@@ -1,4 +1,5 @@
 import { FirstPartBlock } from "../../widgets";
+import React from "react";
 
 export const Page = () => {
     return (

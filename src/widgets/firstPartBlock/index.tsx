@@ -2,7 +2,6 @@ import styles from "./index.module.css";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { MutableRefObject, useRef } from "react";
-import {Div, Panel} from "@vkontakte/vkui";
 
 export const FirstPartBlock = () => {
     const inputRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
