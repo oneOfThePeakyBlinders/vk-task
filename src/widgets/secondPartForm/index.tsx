@@ -7,7 +7,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useDebounce } from "use-debounce";
 import React from "react";
-import {Group, Panel, PanelHeader, View} from "@vkontakte/vkui";
+import {Group, Panel, View} from "@vkontakte/vkui";
 
 export const SecondPartForm = () => {
     const shema = yup.object().shape({

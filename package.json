@@ -12,8 +12,8 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
     "@tanstack/react-query": "^5.28.4",
-    "@vkontakte/icons": "^2.103.0",
     "@vkontakte/vkui": "^6.0.1",
+    "@vkontakte/icons": "^2.103.0",
     "axios": "^1.6.8",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
