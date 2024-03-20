@@ -12,9 +12,8 @@ import {
     View
 } from "@vkontakte/vkui";
 import '@vkontakte/vkui/dist/vkui.css';
-import {BrowserRouter, Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 import {Icon32LogoVkColor} from "@vkontakte/icons";
-import {AppRouter} from "../router";
 import {homeRoutes} from "../../shared";
 
 const HomeLayout = () => {
@@ -28,13 +27,11 @@ const HomeLayout = () => {
                         <Panel id="main">
                             <PanelHeader before={<Icon32LogoVkColor/>}>VK-TEST</PanelHeader>
                             <Group header={<Header mode="secondary">Выберите раздел:</Header>}>
-                                <Card>
-                                    <BrowserRouter>
-                                        <Title><Link style={{textDecoration: 'none'}} to={homeRoutes.first.path}>1-ый раздел</Link></Title>
-                                        <Title><Link style={{textDecoration: 'none'}} to={homeRoutes.second.path}>2-ый раздел</Link></Title>
-                                        <AppRouter />
-                                    </BrowserRouter>
-                                </Card>
+                                    <Card>
+                                            <Title><Link style={{textDecoration: 'none'}} to={homeRoutes.first.path}>1-ый раздел</Link></Title>
+                                            <Title><Link style={{textDecoration: 'none'}} to={homeRoutes.second.path}>2-ый раздел</Link></Title>
+                                            <Outlet />
+                                    </Card>
                             </Group>
                         </Panel>
                     </View>
