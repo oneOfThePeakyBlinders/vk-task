@@ -33,3 +33,7 @@
     background: rgb(27, 99, 245);
     transform: scale(0.95);
 }
+
+.error {
+    color: red;
+}

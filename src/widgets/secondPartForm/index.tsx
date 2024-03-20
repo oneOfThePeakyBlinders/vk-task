@@ -13,12 +13,14 @@ export const SecondPartForm = () => {
     const shema = yup.object().shape({
         name: yup
             .string()
+            .trim()
             .required("Введите имя")
             .matches(/^[A-Za-z]+$/, "Можно вводить только буквы"),
     });
 
-    const {register, watch } = useForm<UserType>({
+    const {register, watch, formState: {errors}} = useForm<UserType>({
         resolver: yupResolver(shema),
+        mode: "onChange"
     });
     const name = watch("name");
     const [debounceName] = useDebounce(name, 3000);
@@ -44,14 +46,22 @@ export const SecondPartForm = () => {
         enabled: false,
     });
 
+    console.log(errors)
+
+    // const onSubmit = async (formData: UserType) => {
+    //     console.log(formData)
+    // };
 
     return (
         <View activePanel="get-fact">
             <Panel id='get-fact'>
-                <Group style={{display: 'flex', justifyContent: 'center'}}>
-                    <form className={styles.form}>
+                <Group style={{display: 'flex', justifyContent: 'center', height: '140px', width: '500px', margin: 'auto'}}>
+                    <form style={{margin: 'auto'}}>
                         <input className={styles.textfield} {...register("name")} />
                         {data?.age && <p>{data.age}</p>}
+                        <div>
+                            <p className={styles.error}>{errors.name?.message}</p>
+                        </div>
                     </form>
                 </Group>
             </Panel>
